@@ -14,7 +14,7 @@ class BookNLP():
 			self.booknlp=EnglishBookNLP(model_params)
 
 	def process(self, inputFile, outputFolder, idd):
-		self.booknlp.process(inputFile, outputFolder, idd)
+		return self.booknlp.process(inputFile, outputFolder, idd)
 
 
 def proc():
@@ -45,7 +45,7 @@ def proc():
 	}
 
 	booknlp=BookNLP(language, model_params)
-	booknlp.process(inputFile, outputFolder, idd)
+	return booknlp.process(inputFile, outputFolder, idd)
 		
 if __name__ is "__main__":
 	proc()
