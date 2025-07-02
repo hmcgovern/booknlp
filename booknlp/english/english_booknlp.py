@@ -379,7 +379,13 @@ class EnglishBookNLP:
 				# with open(join(outFolder, "%s.tokens" % (idd)), "w", encoding="utf-8") as out:
 				# 	out.write("%s\n" % '\t'.join(["paragraph_ID", "sentence_ID", "token_ID_within_sentence", "token_ID_within_document", "word", "lemma", "byte_onset", "byte_offset", "POS_tag", "fine_POS_tag", "dependency_relation", "syntactic_head_ID", "event"]))
 					for token in tokens:
-						outFolder['tokens'] = outFolder.get('tokens', []) + [(token.paragraph_id, token.sentence_id, token.token_id, token.token_id_within_document, token.text, token.lemma, token.byte_onset, token.byte_offset, token.pos, token.fine_pos, token.deprel, token.dephead, getattr(token, 'event', None))]
+						outFolder['tokens'] = outFolder.get('tokens', []) + [(token.paragraph_id, token.sentence_id, token.token_id, 
+												      #token.token_id_within_document, 
+												      token.text, 
+												      token.lemma, 
+												      #token.byte_onset, 
+												      #token.byte_offset, 
+												      token.pos, token.fine_pos, token.deprel, token.dephead, getattr(token, 'event', None))]
 						# out.write("%s\n" % token)
 
 				# print("--- entities: %.3f seconds ---" % (time.time() - start_time))
